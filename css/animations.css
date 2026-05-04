@@ -1,0 +1,560 @@
+/* ============================================================
+   ANIMATIONS — Keyframes, Reveal Classes, Cursor, Marquee
+   ============================================================
+   All scroll-driven reveals use GSAP ScrollTrigger via JS.
+   This file provides the CSS classes and keyframes.
+   ============================================================ */
+
+/* ──────────────────────────────────────────────────────────────
+   1. REVEAL ANIMATIONS — Initial states (before GSAP animates)
+   ────────────────────────────────────────────────────────────── */
+
+/* Elements with data-reveal start invisible and are animated in by GSAP */
+[data-reveal] {
+  opacity: 0;
+  will-change: transform, opacity;
+}
+
+[data-reveal="fade-up"] {
+  transform: translateY(40px);
+}
+
+[data-reveal="fade-down"] {
+  transform: translateY(-40px);
+}
+
+[data-reveal="fade-left"] {
+  transform: translateX(-60px);
+}
+
+[data-reveal="fade-right"] {
+  transform: translateX(60px);
+}
+
+[data-reveal="scale-in"] {
+  transform: scale(0.92);
+}
+
+[data-reveal="clip-up"] {
+  clip-path: inset(100% 0 0 0);
+  opacity: 1; /* clip does the reveal, no fade needed */
+}
+
+[data-reveal="fade"] {
+  /* just opacity, no transform */
+}
+
+/* Revealed state — applied by GSAP when element enters viewport */
+[data-reveal].revealed {
+  opacity: 1;
+  transform: none;
+  clip-path: inset(0 0 0 0);
+}
+
+/* Stagger container — children animate in sequence */
+[data-reveal="stagger"] {
+  opacity: 1; /* container itself is visible */
+}
+
+[data-reveal="stagger"] > * {
+  opacity: 0;
+  transform: translateY(30px);
+}
+
+[data-reveal="stagger"].revealed > * {
+  opacity: 1;
+  transform: none;
+}
+
+
+/* ──────────────────────────────────────────────────────────────
+   2. CUSTOM CURSOR
+   ────────────────────────────────────────────────────────────── */
+
+.custom-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 12px;
+  height: 12px;
+  background-color: var(--text-on-dark);
+  border-radius: var(--radius-full);
+  pointer-events: none;
+  z-index: var(--z-cursor);
+  mix-blend-mode: difference;
+  transition: width var(--duration-normal) var(--ease-out-expo),
+              height var(--duration-normal) var(--ease-out-expo),
+              background-color var(--duration-fast) ease;
+  transform: translate(-50%, -50%);
+  opacity: 0; /* Hidden until mouse moves */
+}
+
+.custom-cursor--visible {
+  opacity: 1;
+}
+
+.custom-cursor--hover {
+  width: 48px;
+  height: 48px;
+  background-color: var(--accent);
+  mix-blend-mode: normal;
+}
+
+.custom-cursor--text {
+  width: 80px;
+  height: 80px;
+  background-color: var(--accent);
+  mix-blend-mode: normal;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--fs-small);
+  font-weight: var(--fw-medium);
+  letter-spacing: var(--ls-wide);
+  text-transform: uppercase;
+  color: var(--bg-primary);
+}
+
+/* Hide custom cursor on touch devices */
+@media (hover: none), (pointer: coarse) {
+  .custom-cursor {
+    display: none !important;
+  }
+
+  body {
+    cursor: auto !important;
+  }
+}
+
+/* Hide default cursor on desktop when custom cursor is active */
+@media (hover: hover) and (pointer: fine) {
+  body.cursor-active {
+    cursor: none;
+  }
+
+  body.cursor-active a,
+  body.cursor-active button,
+  body.cursor-active [role="button"],
+  body.cursor-active input,
+  body.cursor-active textarea,
+  body.cursor-active select,
+  body.cursor-active .clickable {
+    cursor: none;
+  }
+}
+
+
+/* ──────────────────────────────────────────────────────────────
+   3. MARQUEE — Horizontal text strips
+   ────────────────────────────────────────────────────────────── */
+
+.marquee {
+  overflow: hidden;
+  white-space: nowrap;
+  padding: var(--space-lg) 0;
+  border-top: 1px solid var(--border-subtle-dark);
+  border-bottom: 1px solid var(--border-subtle-dark);
+}
+
+.marquee__track {
+  display: flex;
+  width: fit-content;
+  animation: marquee-scroll 30s linear infinite;
+}
+
+.marquee--reverse .marquee__track {
+  animation-direction: reverse;
+}
+
+.marquee--slow .marquee__track {
+  animation-duration: 50s;
+}
+
+.marquee--fast .marquee__track {
+  animation-duration: 20s;
+}
+
+.marquee__content {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2xl);
+  padding-right: var(--space-2xl);
+}
+
+.marquee__text {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 5vw, 4rem);
+  color: var(--text-on-dark);
+  white-space: nowrap;
+  user-select: none;
+}
+
+.marquee__separator {
+  width: 8px;
+  height: 8px;
+  background-color: var(--accent);
+  border-radius: var(--radius-full);
+  flex-shrink: 0;
+}
+
+.marquee__text--outline {
+  -webkit-text-stroke: 1px var(--text-on-dark);
+  color: transparent;
+}
+
+@keyframes marquee-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Pause on hover */
+.marquee:hover .marquee__track {
+  animation-play-state: paused;
+}
+
+
+/* ──────────────────────────────────────────────────────────────
+   4. PARALLAX — GPU-optimized
+   ────────────────────────────────────────────────────────────── */
+
+.parallax-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.parallax-image {
+  position: absolute;
+  inset: -20% 0;
+  width: 100%;
+  height: 140%;
+  object-fit: cover;
+  will-change: transform;
+}
+
+
+/* ──────────────────────────────────────────────────────────────
+   5. BEFORE/AFTER SLIDER
+   ────────────────────────────────────────────────────────────── */
+
+.before-after {
+  position: relative;
+  overflow: hidden;
+  cursor: col-resize;
+  user-select: none;
+}
+
+.before-after__before,
+.before-after__after {
+  position: absolute;
+  inset: 0;
+}
+
+.before-after__before {
+  z-index: 2;
+  clip-path: inset(0 50% 0 0);
+}
+
+.before-after__after {
+  z-index: 1;
+}
+
+.before-after__before img,
+.before-after__after img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.before-after__handle {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 4px;
+  background-color: var(--text-on-dark);
+  z-index: 3;
+  transform: translateX(-50%);
+}
+
+.before-after__handle-circle {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 48px;
+  height: 48px;
+  background-color: var(--text-on-dark);
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: var(--shadow-lg);
+}
+
+.before-after__handle-icon {
+  width: 24px;
+  height: 24px;
+  color: var(--bg-primary);
+}
+
+.before-after__label {
+  position: absolute;
+  bottom: var(--space-md);
+  z-index: 4;
+  padding: var(--space-xs) var(--space-sm);
+  background-color: var(--overlay);
+  font-size: var(--fs-small);
+  font-weight: var(--fw-medium);
+  letter-spacing: var(--ls-wide);
+  text-transform: uppercase;
+  color: var(--text-on-dark);
+}
+
+.before-after__label--before {
+  left: var(--space-md);
+}
+
+.before-after__label--after {
+  right: var(--space-md);
+}
+
+
+/* ──────────────────────────────────────────────────────────────
+   6. PROCESS STEPS — Visual timeline
+   ────────────────────────────────────────────────────────────── */
+
+.process-steps {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-lg);
+  position: relative;
+}
+
+.process-steps::before {
+  content: '';
+  position: absolute;
+  top: 24px;
+  left: 12.5%;
+  right: 12.5%;
+  height: 1px;
+  background-color: var(--border-subtle-dark);
+}
+
+.process-step {
+  text-align: center;
+  position: relative;
+}
+
+.process-step__number {
+  width: 48px;
+  height: 48px;
+  border: 1px solid var(--border-subtle-dark);
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 auto var(--space-md);
+  font-family: var(--font-display);
+  font-size: var(--fs-body-lg);
+  color: var(--text-on-dark);
+  background-color: var(--bg-primary);
+  position: relative;
+  z-index: 2;
+  transition: all var(--duration-normal) var(--ease-out-expo);
+}
+
+.process-step:hover .process-step__number {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.process-step__title {
+  font-family: var(--font-display);
+  font-size: var(--fs-h4);
+  color: var(--text-on-dark);
+  margin-bottom: var(--space-xs);
+}
+
+.process-step__description {
+  font-size: var(--fs-caption);
+  color: var(--text-muted);
+  line-height: var(--lh-loose);
+  max-width: 200px;
+  margin-inline: auto;
+}
+
+@media (max-width: 767px) {
+  .process-steps {
+    grid-template-columns: 1fr;
+    gap: var(--space-xl);
+  }
+
+  .process-steps::before {
+    top: 0;
+    bottom: 0;
+    left: 24px;
+    right: auto;
+    width: 1px;
+    height: auto;
+  }
+
+  .process-step {
+    text-align: left;
+    padding-left: var(--space-3xl);
+  }
+
+  .process-step__number {
+    position: absolute;
+    left: 0;
+    top: 0;
+    margin: 0;
+  }
+}
+
+
+/* ──────────────────────────────────────────────────────────────
+   7. CTA SECTION — Full-width dark call-to-action
+   ────────────────────────────────────────────────────────────── */
+
+.cta-section {
+  background-color: var(--bg-secondary);
+  padding: var(--space-4xl) var(--gutter);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-section::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(
+    ellipse at center,
+    var(--accent-muted) 0%,
+    transparent 70%
+  );
+  opacity: 0.3;
+  pointer-events: none;
+}
+
+.cta-section__content {
+  position: relative;
+  z-index: 1;
+  max-width: 640px;
+  margin-inline: auto;
+}
+
+.cta-section__title {
+  font-family: var(--font-display);
+  font-size: var(--fs-h1);
+  line-height: var(--lh-tight);
+  color: var(--text-on-dark);
+  margin-bottom: var(--space-md);
+}
+
+.cta-section__description {
+  color: var(--text-muted);
+  font-size: var(--fs-body-lg);
+  margin-bottom: var(--space-xl);
+}
+
+.cta-section__actions {
+  display: flex;
+  gap: var(--space-sm);
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+
+/* ──────────────────────────────────────────────────────────────
+   8. PAGE LOADING STATE
+   ────────────────────────────────────────────────────────────── */
+
+.page-loader {
+  position: fixed;
+  inset: 0;
+  z-index: var(--z-max);
+  background-color: var(--bg-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity var(--duration-slow) var(--ease-out-expo);
+}
+
+.page-loader--hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.page-loader__bar {
+  width: 120px;
+  height: 2px;
+  background-color: var(--border-subtle-dark);
+  position: relative;
+  overflow: hidden;
+}
+
+.page-loader__bar::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-color: var(--accent);
+  animation: loader-progress 1.5s var(--ease-in-out) infinite;
+}
+
+@keyframes loader-progress {
+  0% { transform: translateX(-100%); }
+  50% { transform: translateX(0); }
+  100% { transform: translateX(100%); }
+}
+
+
+/* ──────────────────────────────────────────────────────────────
+   9. LIGHTBOX OVERRIDES — PhotoSwipe custom styling
+   ────────────────────────────────────────────────────────────── */
+
+.pswp {
+  --pswp-bg: var(--bg-primary) !important;
+}
+
+
+/* ──────────────────────────────────────────────────────────────
+   10. REDUCED MOTION
+   ────────────────────────────────────────────────────────────── */
+
+@media (prefers-reduced-motion: reduce) {
+  [data-reveal] {
+    opacity: 1 !important;
+    transform: none !important;
+    clip-path: none !important;
+  }
+
+  .marquee__track {
+    animation: none !important;
+  }
+
+  .custom-cursor {
+    display: none !important;
+  }
+
+  .parallax-image {
+    position: relative;
+    inset: auto;
+    height: 100%;
+  }
+
+  .scroll-indicator {
+    animation: none;
+  }
+
+  .page-loader__bar::after {
+    animation: none;
+  }
+}
