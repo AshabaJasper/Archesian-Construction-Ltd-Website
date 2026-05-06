@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Archesian Construction Ltd - Architecture, Engineering & Construction in Kampala</title>
+  <title>Archesian Construction Ltd — Architecture, Engineering & Construction in Kampala</title>
   <meta name="description" content="Archesian Construction Ltd is a Kampala-based architecture, engineering, quantity surveying, project management, design-build, and renovations practice.">
   <meta name="theme-color" content="#F5F2EC">
   <meta property="og:title" content="Archesian Construction Ltd">
@@ -12,13 +12,13 @@
   <meta property="og:image" content="assets/logos/Archesian Construction Ltd Logo.jpg">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&family=IBM+Plex+Mono:wght@400;500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/design-system.css">
   <link rel="stylesheet" href="css/layout.css?v=20260506">
   <link rel="stylesheet" href="css/components.css?v=20260506">
   <link rel="stylesheet" href="css/animations.css">
-  <link rel="stylesheet" href="css/pages/home.css?v=20260506">
-  <link rel="stylesheet" href="css/archesian.css?v=20260506">
+  <link rel="stylesheet" href="css/pages/home.css?v=20260507">
+  <link rel="stylesheet" href="css/archesian.css?v=20260507">
   <script type="application/ld+json" class="schema-json">
     {
       "@context": "https://schema.org",
@@ -38,17 +38,52 @@
 </head>
 <body data-barba="wrapper">
   <main id="main-content" data-barba="container" data-barba-namespace="home">
+
+    <!-- ────────────────────────────────────────────────────────────
+         HERO — editorial, single voice, clear hierarchy
+         ──────────────────────────────────────────────────────────── -->
     <section class="home-hero" aria-labelledby="hero-title">
       <div class="home-hero__inner">
         <div class="home-hero__copy" data-reveal="fade-up">
-          <h1 id="hero-title" class="home-hero__title"><span>Architecture,</span><span>engineering, and</span><span>construction -</span><span>under one roof in</span><span>Kampala.</span></h1>
-          <p class="home-hero__text">Archesian brings design judgment, technical coordination, cost control, and site delivery into one accountable practice.</p>
+          <p class="home-hero__eyebrow">
+            <span class="home-hero__index">N&deg; 01</span>
+            <span class="home-hero__rule" aria-hidden="true"></span>
+            <span>Kampala &middot; Est. 2026</span>
+          </p>
+
+          <h1 id="hero-title" class="home-hero__title">
+            Architecture, engineering, and construction
+            <span class="home-hero__title-accent">under one roof</span>
+            in Kampala.
+          </h1>
+
+          <p class="home-hero__text">
+            Archesian brings design judgment, technical coordination, cost control, and site delivery into a single accountable practice &mdash; so a client speaks to one team from sketch to handover.
+          </p>
+
           <div class="home-hero__actions">
             <a href="projects.html" class="btn btn--primary btn--lg">View Our Work</a>
             <a href="contact.html" class="btn btn--secondary btn--lg">Start a Project</a>
           </div>
+
+          <dl class="home-hero__meta" aria-label="Practice at a glance">
+            <div>
+              <dt>Disciplines</dt>
+              <dd>06</dd>
+            </div>
+            <div>
+              <dt>Studio</dt>
+              <dd>Kisaasi</dd>
+            </div>
+            <div>
+              <dt>Scope</dt>
+              <dd>A&amp;E &middot; QS &middot; PM</dd>
+            </div>
+          </dl>
         </div>
+
         <div class="home-hero__drawing arch-panel" aria-hidden="true" data-reveal="fade-left">
+          <span class="home-hero__plate">Plate A&middot;01</span>
           <svg class="arch-mark arch-mark--draw home-hero__arch" viewBox="0 0 220 260">
             <path d="M34 236V132C34 61 69 24 110 24s76 37 76 108v104" stroke-width="6"/>
             <path d="M54 236V136c0-56 25-91 56-91s56 35 56 91v100" stroke-width="3.5"/>
@@ -56,70 +91,94 @@
             <path d="M18 236h184" stroke-width="3"/>
           </svg>
           <div class="home-hero__draft-lines">
-            <span>SECTION A-01</span>
+            <span>SECTION A&ndash;01</span>
             <span>KISAASI / KAMPALA</span>
           </div>
         </div>
       </div>
-      <a class="home-hero__scroll" href="#practice" aria-label="Scroll to practice section">Scroll</a>
+      <a class="home-hero__scroll" href="#practice" aria-label="Scroll to practice section">
+        <span>Scroll</span>
+        <span class="home-hero__scroll-line" aria-hidden="true"></span>
+      </a>
     </section>
 
+    <!-- ────────────────────────────────────────────────────────────
+         02 — THE PRACTICE
+         ──────────────────────────────────────────────────────────── -->
     <section id="practice" class="section practice-section">
       <div class="container practice-section__grid">
-        <div>
-          <p class="technical-label" data-reveal="fade-up">The Practice</p>
-          <h2 data-reveal="fade-up">A building practice shaped around drawings, costs, site work, and handover.</h2>
+        <div class="practice-section__lede">
+          <p class="section-eyebrow" data-reveal="fade-up">
+            <span class="section-eyebrow__index">N&deg; 02</span>
+            <span>The Practice</span>
+          </p>
+          <h2 class="practice-section__title" data-reveal="fade-up">
+            A building practice shaped around drawings, costs,
+            <em>site work,</em> and handover.
+          </h2>
         </div>
         <div class="practice-section__body" data-reveal="fade-up">
-          <p>Archesian Construction Ltd is a multidisciplinary architecture, engineering, and construction firm based at Ndundu Complex in Kisaasi, Kampala. The practice is built for clients who need one team to think across design, structure, MEP, cost, procurement, supervision, and delivery without losing technical clarity between disciplines.</p>
-          <div class="credibility-strip" aria-label="Practice notes">
-            <div><strong>6</strong><span>disciplines</span></div>
-            <div><strong>Kampala</strong><span>based practice</span></div>
-            <div><strong>A&E + QS + PM</strong><span>integrated scope</span></div>
-          </div>
+          <p>Archesian Construction Ltd is a multidisciplinary architecture, engineering, and construction firm based at Ndundu Complex in Kisaasi, Kampala. The practice is built for clients who need one team to think across design, structure, MEP, cost, procurement, supervision, and delivery &mdash; without losing technical clarity between disciplines.</p>
+          <a href="about.html" class="link-arrow">Read the studio brief
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
         </div>
       </div>
     </section>
 
-    <section class="section section--paper">
+    <!-- ────────────────────────────────────────────────────────────
+         03 — SERVICES
+         ──────────────────────────────────────────────────────────── -->
+    <section class="section section--paper services-section">
       <div class="container">
-        <div class="section-header" data-reveal="fade-up">
-          <p class="technical-label">Services</p>
-          <h2 class="section-header__title">Six disciplines, one coordinated brief.</h2>
+        <header class="section-header" data-reveal="fade-up">
+          <p class="section-eyebrow">
+            <span class="section-eyebrow__index">N&deg; 03</span>
+            <span>Services</span>
+          </p>
+          <h2 class="section-header__title">
+            Six disciplines, <em>one</em> coordinated brief.
+          </h2>
           <p class="section-header__description">Each service can stand alone, but Archesian's advantage is how these disciplines inform one another before work reaches site.</p>
-        </div>
+        </header>
         <div class="services-grid" data-reveal="stagger">
           <a href="service-architecture.html" class="service-card">
+            <span class="service-card__index">01</span>
             <svg class="service-card__icon arch-line-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true"><path d="M8 40h32M13 40V23c0-9 5-15 11-15s11 6 11 15v17M19 40V25c0-5 2-9 5-9s5 4 5 9v15" stroke="currentColor" stroke-width="1.8"/></svg>
             <h3 class="service-card__title">Architecture</h3>
             <p class="service-card__description">Residential, commercial, and institutional design from concept through detailed drawings.</p>
             <span class="service-card__learn">Learn more</span>
           </a>
           <a href="service-engineering.html" class="service-card">
+            <span class="service-card__index">02</span>
             <svg class="service-card__icon arch-line-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true"><path d="M10 38h28M14 38V12h20v26M20 38V18M28 38V18M14 24h20M14 31h20" stroke="currentColor" stroke-width="1.8"/></svg>
             <h3 class="service-card__title">Engineering</h3>
             <p class="service-card__description">Structural, civil, and MEP coordination for buildable, compliant projects.</p>
             <span class="service-card__learn">Learn more</span>
           </a>
           <a href="service-project-management.html" class="service-card">
+            <span class="service-card__index">03</span>
             <svg class="service-card__icon arch-line-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true"><path d="M14 12h20v28H14zM19 20h10M19 27h10M19 34h6M20 8h8v6h-8" stroke="currentColor" stroke-width="1.8"/></svg>
             <h3 class="service-card__title">Project Management</h3>
             <p class="service-card__description">Programme, procurement, reporting, consultant coordination, and site controls.</p>
             <span class="service-card__learn">Learn more</span>
           </a>
           <a href="service-quantity-surveying.html" class="service-card">
+            <span class="service-card__index">04</span>
             <svg class="service-card__icon arch-line-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true"><path d="M12 10h24v30H12zM18 18h12M18 25h12M18 32h8M35 14l4 4-4 4" stroke="currentColor" stroke-width="1.8"/></svg>
             <h3 class="service-card__title">Quantity Surveying</h3>
             <p class="service-card__description">BOQs, cost plans, valuations, contract administration, and value engineering.</p>
             <span class="service-card__learn">Learn more</span>
           </a>
           <a href="service-design-and-build.html" class="service-card">
+            <span class="service-card__index">05</span>
             <svg class="service-card__icon arch-line-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true"><path d="M9 39h30M13 39V23l11-12 11 12v16M20 39V27h8v12M10 23h28" stroke="currentColor" stroke-width="1.8"/></svg>
             <h3 class="service-card__title">Design and Build</h3>
             <p class="service-card__description">Turnkey delivery with a single point of accountability from concept to handover.</p>
             <span class="service-card__learn">Learn more</span>
           </a>
           <a href="service-renovations.html" class="service-card">
+            <span class="service-card__index">06</span>
             <svg class="service-card__icon arch-line-icon" viewBox="0 0 48 48" fill="none" aria-hidden="true"><path d="M13 37V17h22v20M10 37h28M17 24h8M17 30h14M31 12l5 5-5 5" stroke="currentColor" stroke-width="1.8"/></svg>
             <h3 class="service-card__title">Renovations</h3>
             <p class="service-card__description">Refurbishment, staged works, and before-after transformation for occupied or existing sites.</p>
@@ -129,36 +188,87 @@
       </div>
     </section>
 
+    <!-- ────────────────────────────────────────────────────────────
+         04 — FEATURED PROJECTS
+         ──────────────────────────────────────────────────────────── -->
     <section class="section featured-projects">
       <div class="container">
-        <div class="section-header" data-reveal="fade-up">
-          <p class="technical-label">Featured Projects</p>
-          <h2 class="section-header__title">A portfolio shaped around scope and delivery.</h2>
-          <p class="section-header__description">Sample project stories showing how Archesian can present residential, commercial, institutional, and renovation work with clear discipline context.</p>
-        </div>
+        <header class="section-header section-header--split" data-reveal="fade-up">
+          <div>
+            <p class="section-eyebrow">
+              <span class="section-eyebrow__index">N&deg; 04</span>
+              <span>Featured Projects</span>
+            </p>
+            <h2 class="section-header__title">
+              A portfolio shaped around <em>scope</em> and delivery.
+            </h2>
+          </div>
+          <a href="projects.html" class="link-arrow">All projects
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </header>
         <div class="featured-projects__grid" data-reveal="stagger">
           <a href="project-detail.html" class="project-card project-card--large" data-cursor-text="View Project">
-            <div class="project-card__image-wrapper"><img src="assets/images/projects/project-1.png" alt="Kisaasi Family Residence" class="project-card__image" width="900" height="650" loading="lazy"><div class="project-card__overlay"></div></div>
-            <div class="project-card__content"><span class="project-card__category"><span class="project-card__icon"><svg viewBox="0 0 24 24" fill="none"><path d="M4 20h16M7 20V10l5-5 5 5v10M10 20v-6h4v6" stroke="currentColor" stroke-width="1.6"/></svg></span>Architecture / Design and Build</span><h3 class="project-card__title">Kisaasi Family Residence</h3><div class="project-card__meta"><span>Kampala</span><span>Residential</span><span>2026</span></div></div>
+            <div class="project-card__image-wrapper">
+              <img src="assets/images/projects/project-1.png" alt="Kisaasi Family Residence" class="project-card__image" width="900" height="650" loading="lazy">
+              <div class="project-card__overlay"></div>
+            </div>
+            <div class="project-card__content">
+              <span class="project-card__category">
+                <span class="project-card__icon"><svg viewBox="0 0 24 24" fill="none"><path d="M4 20h16M7 20V10l5-5 5 5v10M10 20v-6h4v6" stroke="currentColor" stroke-width="1.6"/></svg></span>
+                Architecture / Design and Build
+              </span>
+              <h3 class="project-card__title">Kisaasi Family Residence</h3>
+              <div class="project-card__meta"><span>Kampala</span><span>Residential</span><span>2026</span></div>
+            </div>
           </a>
           <a href="project-detail.html" class="project-card" data-cursor-text="View Project">
-            <div class="project-card__image-wrapper"><img src="assets/images/projects/project-2.png" alt="Ntinda Mixed-Use Block" class="project-card__image" width="600" height="450" loading="lazy"><div class="project-card__overlay"></div></div>
-            <div class="project-card__content"><span class="project-card__category"><span class="project-card__icon"><svg viewBox="0 0 24 24" fill="none"><path d="M7 4h10v16H7zM10 8h4M10 12h4M10 16h4" stroke="currentColor" stroke-width="1.6"/></svg></span>QS / Project Management</span><h3 class="project-card__title">Ntinda Mixed-Use Block</h3><div class="project-card__meta"><span>Kampala</span><span>Commercial</span><span>2026</span></div></div>
+            <div class="project-card__image-wrapper">
+              <img src="assets/images/projects/project-2.png" alt="Ntinda Mixed-Use Block" class="project-card__image" width="600" height="450" loading="lazy">
+              <div class="project-card__overlay"></div>
+            </div>
+            <div class="project-card__content">
+              <span class="project-card__category">
+                <span class="project-card__icon"><svg viewBox="0 0 24 24" fill="none"><path d="M7 4h10v16H7zM10 8h4M10 12h4M10 16h4" stroke="currentColor" stroke-width="1.6"/></svg></span>
+                QS / Project Management
+              </span>
+              <h3 class="project-card__title">Ntinda Mixed-Use Block</h3>
+              <div class="project-card__meta"><span>Kampala</span><span>Commercial</span><span>2026</span></div>
+            </div>
           </a>
           <a href="project-detail.html" class="project-card" data-cursor-text="View Project">
-            <div class="project-card__image-wrapper"><img src="assets/images/projects/project-3.png" alt="Kololo Office Retrofit" class="project-card__image" width="600" height="450" loading="lazy"><div class="project-card__overlay"></div></div>
-            <div class="project-card__content"><span class="project-card__category"><span class="project-card__icon"><svg viewBox="0 0 24 24" fill="none"><path d="M5 19h14M7 19V8h10v11M9 12h6M9 15h4M15 5l3 3-3 3" stroke="currentColor" stroke-width="1.6"/></svg></span>Renovation / Engineering</span><h3 class="project-card__title">Kololo Office Retrofit</h3><div class="project-card__meta"><span>Kampala</span><span>Renovation</span><span>2026</span></div></div>
+            <div class="project-card__image-wrapper">
+              <img src="assets/images/projects/project-3.png" alt="Kololo Office Retrofit" class="project-card__image" width="600" height="450" loading="lazy">
+              <div class="project-card__overlay"></div>
+            </div>
+            <div class="project-card__content">
+              <span class="project-card__category">
+                <span class="project-card__icon"><svg viewBox="0 0 24 24" fill="none"><path d="M5 19h14M7 19V8h10v11M9 12h6M9 15h4M15 5l3 3-3 3" stroke="currentColor" stroke-width="1.6"/></svg></span>
+                Renovation / Engineering
+              </span>
+              <h3 class="project-card__title">Kololo Office Retrofit</h3>
+              <div class="project-card__meta"><span>Kampala</span><span>Renovation</span><span>2026</span></div>
+            </div>
           </a>
         </div>
       </div>
     </section>
 
-    <section class="section section--paper">
+    <!-- ────────────────────────────────────────────────────────────
+         05 — PROCESS
+         ──────────────────────────────────────────────────────────── -->
+    <section class="section section--paper process-section">
       <div class="container">
-        <div class="section-header" data-reveal="fade-up">
-          <p class="technical-label">Process Snapshot</p>
-          <h2 class="section-header__title">Five stages from brief to handover.</h2>
-        </div>
+        <header class="section-header" data-reveal="fade-up">
+          <p class="section-eyebrow">
+            <span class="section-eyebrow__index">N&deg; 05</span>
+            <span>Process</span>
+          </p>
+          <h2 class="section-header__title">
+            Five stages from <em>brief</em> to handover.
+          </h2>
+          <p class="section-header__description">A simple, transparent path. Every stage is documented and signed off before the next begins.</p>
+        </header>
         <div class="process-timeline" data-reveal="stagger">
           <div class="process-timeline__stage process-timeline__stage--open" data-process-stage>
             <button class="process-timeline__button" type="button" data-process-trigger aria-expanded="true"><span>01</span>Brief</button>
@@ -184,24 +294,40 @@
       </div>
     </section>
 
+    <!-- ────────────────────────────────────────────────────────────
+         06 — CONTACT
+         ──────────────────────────────────────────────────────────── -->
     <section class="section home-contact">
       <div class="container home-contact__grid">
         <div data-reveal="fade-up">
-          <p class="technical-label">Get in Touch</p>
-          <h2>Bring the site, scope, and constraints. Archesian will help define the next step.</h2>
+          <p class="section-eyebrow">
+            <span class="section-eyebrow__index">N&deg; 06</span>
+            <span>Get in Touch</span>
+          </p>
+          <h2 class="home-contact__title">
+            Bring the site, scope, and constraints. Archesian will help <em>define the next step.</em>
+          </h2>
         </div>
         <div class="contact-list" data-reveal="fade-up">
-          <a href="tel:+256706746868">+256 706 746 868</a>
-          <a href="tel:+256785170747">+256 785 170 747</a>
-          <span>Ndundu Complex, Kisaasi, Kampala</span>
-          <a href="https://x.com/Archesian">@Archesian on X</a>
-          <a href="contact.html" class="btn btn--primary">Start a Project</a>
+          <a href="tel:+256706746868" class="contact-list__item">
+            <span class="contact-list__label">Office</span>
+            <span class="contact-list__value">+256 706 746 868</span>
+          </a>
+          <a href="tel:+256785170747" class="contact-list__item">
+            <span class="contact-list__label">Direct</span>
+            <span class="contact-list__value">+256 785 170 747</span>
+          </a>
+          <span class="contact-list__item">
+            <span class="contact-list__label">Studio</span>
+            <span class="contact-list__value">Ndundu Complex, Kisaasi, Kampala</span>
+          </span>
+          <a href="contact.html" class="btn btn--primary contact-list__cta">Start a Project</a>
         </div>
       </div>
     </section>
   </main>
 
-  <script src="js/core/shared-shell.js?v=20260506"></script>
+  <script src="js/core/shared-shell.js?v=20260507"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
   <script src="https://unpkg.com/lenis@1.3.3/dist/lenis.min.js"></script>
