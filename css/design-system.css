@@ -1,6 +1,6 @@
 /* ============================================================
-   DESIGN SYSTEM — [CLIENT NAME] Construction
-   Luxury B&W Editorial Aesthetic
+   DESIGN SYSTEM — Archesian Construction Ltd
+   Base tokens overridden by Archesian brand layer
    ============================================================
    This file contains the complete design foundation:
    1. CSS Reset (modern)
@@ -157,7 +157,7 @@ button {
   --border-subtle-light: #E5E5E5;
   --border-light: #D4D4D4;
 
-  /* Accent — Champagne (used sparingly, ≤3% of any view) */
+  /* Accent token, overridden by Archesian blueprint blue */
   --accent: #B8956A;
   --accent-hover: #CEAD87;
   --accent-active: #A37E55;

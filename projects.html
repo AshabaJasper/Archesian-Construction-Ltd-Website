@@ -3,36 +3,30 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Projects - [CLIENT NAME]</title>
-  <meta name="description" content="Explore selected residential, commercial, and renovation projects by [CLIENT NAME].">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
-  <link rel="stylesheet" href="css/design-system.css">
-  <link rel="stylesheet" href="css/layout.css?v=20260504b">
-  <link rel="stylesheet" href="css/components.css?v=20260504b">
-  <link rel="stylesheet" href="css/animations.css">
-  <link rel="stylesheet" href="css/pages/home.css">
+  <title>Projects - Archesian Construction Ltd</title>
+  <meta name="description" content="Filter Archesian Construction Ltd project samples by service, project type, and year across architecture, engineering, QS, project management, design-build, and renovations.">
+  <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/design-system.css"><link rel="stylesheet" href="css/layout.css?v=20260506"><link rel="stylesheet" href="css/components.css?v=20260506"><link rel="stylesheet" href="css/animations.css"><link rel="stylesheet" href="css/pages/home.css?v=20260506"><link rel="stylesheet" href="css/archesian.css?v=20260506">
 </head>
 <body data-barba="wrapper">
   <main id="main-content" data-barba="container" data-barba-namespace="projects">
-    <section class="page-hero page-hero--medium">
-      <div class="page-hero__bg"><img src="assets/images/projects/project-2.png" alt="Completed commercial construction project" width="1920" height="1080" loading="eager"><div class="page-hero__overlay"></div></div>
+    <section class="page-hero">
       <div class="page-hero__content">
-        <span class="text-eyebrow text-eyebrow--accent" data-reveal="fade-up">Projects</span>
-        <h1 class="text-display" data-reveal="fade-up" data-reveal-delay="0.1">Work with a measured finish.</h1>
-        <p class="text-lead" data-reveal="fade-up" data-reveal-delay="0.2">Selected residential, commercial, and renovation projects delivered through disciplined coordination.</p>
+        <p class="technical-label" data-reveal="fade-up">Projects</p>
+        <h1 class="text-display" data-reveal="fade-up" data-reveal-delay="0.1">Project work by scope, discipline, and stage.</h1>
+        <p class="text-lead" data-reveal="fade-up" data-reveal-delay="0.2">A selected portfolio view showing service mix, project type, location, and year at a glance.</p>
       </div>
     </section>
-    <section class="section section--dark">
+    <section class="section">
       <div class="container">
         <div class="flex flex--between flex--wrap flex--gap-md" data-reveal="fade-up">
-          <div class="flex flex--wrap flex--gap-sm">
-            <button class="filter-pill filter-pill--active" data-filter-category="all">All</button>
-            <button class="filter-pill" data-filter-category="residential">Residential</button>
-            <button class="filter-pill" data-filter-category="commercial">Commercial</button>
-            <button class="filter-pill" data-filter-category="renovation">Renovation</button>
+          <div class="flex flex--wrap flex--gap-sm" aria-label="Project filters">
+            <button class="filter-pill filter-pill--active" data-filter-category="all" type="button">All</button>
+            <button class="filter-pill" data-filter-category="architecture" type="button">Architecture</button>
+            <button class="filter-pill" data-filter-category="engineering" type="button">Engineering</button>
+            <button class="filter-pill" data-filter-category="qs" type="button">QS</button>
+            <button class="filter-pill" data-filter-category="renovation" type="button">Renovation</button>
           </div>
           <label class="sr-only" for="project-sort">Sort projects</label>
           <select id="project-sort" class="form-select" data-sort>
@@ -42,15 +36,14 @@
         </div>
         <div class="spacer--xl"></div>
         <div class="grid grid--3" data-project-grid data-reveal="stagger">
-          <a href="project-detail.html" class="project-card" data-project-item data-category="residential" data-year="2025" data-cursor-text="View"><div class="project-card__image-wrapper"><img src="assets/images/projects/project-1.png" alt="Hillcrest Residence" class="project-card__image" width="600" height="450" loading="lazy"><div class="project-card__overlay"></div></div><div class="project-card__content"><span class="project-card__category">Residential</span><h3 class="project-card__title">Hillcrest Residence</h3><div class="project-card__meta"><span>Kampala</span><span class="project-card__meta-divider">|</span><span>2025</span></div></div></a>
-          <a href="project-detail.html" class="project-card" data-project-item data-category="commercial" data-year="2024" data-cursor-text="View"><div class="project-card__image-wrapper"><img src="assets/images/projects/project-2.png" alt="Northline Offices" class="project-card__image" width="600" height="450" loading="lazy"><div class="project-card__overlay"></div></div><div class="project-card__content"><span class="project-card__category">Commercial</span><h3 class="project-card__title">Northline Offices</h3><div class="project-card__meta"><span>Entebbe</span><span class="project-card__meta-divider">|</span><span>2024</span></div></div></a>
-          <a href="project-detail.html" class="project-card" data-project-item data-category="renovation" data-year="2024" data-cursor-text="View"><div class="project-card__image-wrapper"><img src="assets/images/projects/project-3.png" alt="Lakeside Penthouse" class="project-card__image" width="600" height="450" loading="lazy"><div class="project-card__overlay"></div></div><div class="project-card__content"><span class="project-card__category">Renovation</span><h3 class="project-card__title">Lakeside Penthouse</h3><div class="project-card__meta"><span>Jinja</span><span class="project-card__meta-divider">|</span><span>2024</span></div></div></a>
+          <a href="project-detail.html" class="project-card" data-project-item data-category="architecture" data-year="2026" data-cursor-text="View Project"><div class="project-card__image-wrapper"><img src="assets/images/projects/project-1.png" alt="Kisaasi Family Residence" class="project-card__image" width="600" height="450" loading="lazy"><div class="project-card__overlay"></div></div><div class="project-card__content"><span class="project-card__category"><span class="project-card__icon"><svg viewBox="0 0 24 24" fill="none"><path d="M4 20h16M7 20V10l5-5 5 5v10M10 20v-6h4v6" stroke="currentColor" stroke-width="1.6"/></svg></span>Architecture / Design Build</span><h3 class="project-card__title">Kisaasi Family Residence</h3><div class="project-card__meta"><span>Kampala</span><span>Residential</span><span>2026</span></div></div></a>
+          <a href="project-detail.html" class="project-card" data-project-item data-category="qs" data-year="2026" data-cursor-text="View Project"><div class="project-card__image-wrapper"><img src="assets/images/projects/project-2.png" alt="Ntinda Mixed-Use Block" class="project-card__image" width="600" height="450" loading="lazy"><div class="project-card__overlay"></div></div><div class="project-card__content"><span class="project-card__category"><span class="project-card__icon"><svg viewBox="0 0 24 24" fill="none"><path d="M6 4h12v16H6zM9 8h6M9 12h6M9 16h3" stroke="currentColor" stroke-width="1.6"/></svg></span>QS / Project Management</span><h3 class="project-card__title">Ntinda Mixed-Use Block</h3><div class="project-card__meta"><span>Kampala</span><span>Commercial</span><span>2026</span></div></div></a>
+          <a href="project-detail.html" class="project-card" data-project-item data-category="renovation" data-year="2026" data-cursor-text="View Project"><div class="project-card__image-wrapper"><img src="assets/images/projects/project-3.png" alt="Kololo Office Retrofit" class="project-card__image" width="600" height="450" loading="lazy"><div class="project-card__overlay"></div></div><div class="project-card__content"><span class="project-card__category"><span class="project-card__icon"><svg viewBox="0 0 24 24" fill="none"><path d="M5 19h14M7 19V8h10v11M9 12h6M9 15h4M15 5l3 3-3 3" stroke="currentColor" stroke-width="1.6"/></svg></span>Renovation / Engineering</span><h3 class="project-card__title">Kololo Office Retrofit</h3><div class="project-card__meta"><span>Kampala</span><span>Commercial</span><span>2026</span></div></div></a>
+          <a href="project-detail.html" class="project-card" data-project-item data-category="engineering" data-year="2025" data-cursor-text="View Project"><div class="project-card__image-wrapper"><img src="assets/images/about/construction-site.png" alt="Institutional Hall Structure" class="project-card__image" width="600" height="450" loading="lazy"><div class="project-card__overlay"></div></div><div class="project-card__content"><span class="project-card__category"><span class="project-card__icon"><svg viewBox="0 0 24 24" fill="none"><path d="M5 19h14M7 19V5h10v14M10 8h4M10 12h4M10 16h4" stroke="currentColor" stroke-width="1.6"/></svg></span>Engineering / Institutional</span><h3 class="project-card__title">Institutional Hall Structure</h3><div class="project-card__meta"><span>Central Uganda</span><span>Institutional</span><span>2025</span></div></div></a>
         </div>
       </div>
     </section>
   </main>
-  <script src="js/core/shared-shell.js?v=20260504"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script><script src="https://unpkg.com/lenis@1.3.3/dist/lenis.min.js"></script><script src="https://cdn.jsdelivr.net/npm/@barba/core@2.10.0/dist/barba.umd.min.js"></script><script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-  <script src="js/core/utils.js"></script><script src="js/core/smooth-scroll.js"></script><script src="js/core/animations.js?v=20260504b"></script><script src="js/core/cursor.js"></script><script src="js/core/nav.js"></script><script src="js/core/transitions.js?v=20260504c"></script><script src="js/components/counter.js"></script><script src="js/components/slider.js"></script><script src="js/components/accordion.js?v=20260504a"></script><script src="js/components/filter.js"></script><script src="js/components/forms.js"></script><script src="js/components/quote-form.js"></script><script src="js/components/newsletter.js?v=20260504"></script><script src="js/core/app.js?v=20260504a"></script>
+  <script src="js/core/shared-shell.js?v=20260506"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script><script src="https://unpkg.com/lenis@1.3.3/dist/lenis.min.js"></script><script src="https://cdn.jsdelivr.net/npm/@barba/core@2.10.0/dist/barba.umd.min.js"></script><script src="js/core/utils.js"></script><script src="js/core/smooth-scroll.js"></script><script src="js/core/animations.js?v=20260506"></script><script src="js/core/cursor.js"></script><script src="js/core/nav.js"></script><script src="js/core/transitions.js?v=20260506"></script><script src="js/components/filter.js"></script><script src="js/components/forms.js"></script><script src="js/components/accordion.js"></script><script src="js/core/app.js?v=20260506"></script><script src="js/archesian.js?v=20260506"></script>
 </body>
 </html>

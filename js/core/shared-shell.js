@@ -40,20 +40,19 @@ const SharedShell = {
     document.body.insertAdjacentHTML('afterbegin', `
       <nav class="nav" aria-label="Primary navigation">
         <div class="nav__inner">
-          <a href="index.html" class="nav__logo" aria-label="[CLIENT NAME] home">
-            <span class="nav__logo-mark" aria-hidden="true">C</span>
-            <span class="nav__logo-text">[CLIENT NAME]</span>
+          <a href="index.html" class="nav__logo" aria-label="Archesian Construction Ltd home">
+            <img class="nav__logo-image" src="assets/logos/Archesian Construction Ltd Logo.jpg" alt="Archesian Construction Ltd" width="92" height="92">
+            <span class="nav__logo-text">Archesian</span>
           </a>
           <div class="nav__links">
             <a href="index.html" class="nav__link">Home</a>
             <a href="about.html" class="nav__link">About</a>
-            <a href="projects.html" class="nav__link">Projects</a>
             <a href="services.html" class="nav__link">Services</a>
+            <a href="projects.html" class="nav__link">Projects</a>
             <a href="process.html" class="nav__link">Process</a>
-            <a href="insights.html" class="nav__link">Insights</a>
             <a href="contact.html" class="nav__link">Contact</a>
           </div>
-          <a href="quote.html" class="btn btn--primary btn--sm nav__cta">Get a Quote</a>
+          <a href="contact.html" class="btn btn--primary btn--sm nav__cta">Start a Project</a>
           <button class="nav__hamburger" type="button" aria-label="Open navigation menu">
             <span class="nav__hamburger-line"></span>
             <span class="nav__hamburger-line"></span>
@@ -72,19 +71,17 @@ const SharedShell = {
         <div class="mobile-menu__links">
           <a href="index.html" class="mobile-menu__link">Home</a>
           <a href="about.html" class="mobile-menu__link">About</a>
-          <a href="projects.html" class="mobile-menu__link">Projects</a>
           <a href="services.html" class="mobile-menu__link">Services</a>
+          <a href="projects.html" class="mobile-menu__link">Projects</a>
           <a href="process.html" class="mobile-menu__link">Process</a>
-          <a href="insights.html" class="mobile-menu__link">Insights</a>
           <a href="contact.html" class="mobile-menu__link">Contact</a>
         </div>
         <div class="mobile-menu__cta">
-          <a href="quote.html" class="btn btn--primary">Get a Quote</a>
+          <a href="contact.html" class="btn btn--primary">Start a Project</a>
         </div>
         <div class="mobile-menu__footer">
-          <a href="#" class="mobile-menu__social-link">Instagram</a>
-          <a href="#" class="mobile-menu__social-link">LinkedIn</a>
-          <a href="#" class="mobile-menu__social-link">X</a>
+          <a href="tel:+256706746868" class="mobile-menu__social-link">+256 706 746 868</a>
+          <a href="https://x.com/Archesian" class="mobile-menu__social-link">X</a>
         </div>
       </div>
     `);
@@ -96,78 +93,58 @@ const SharedShell = {
     document.body.insertAdjacentHTML('beforeend', `
       <footer class="footer">
         <div class="footer__inner">
-          <div class="footer__top">
-            <div class="footer__brand">
-              <a href="index.html" class="nav__logo" aria-label="[CLIENT NAME] home">
-                <span class="nav__logo-mark" aria-hidden="true">C</span>
-                <span class="nav__logo-text">[CLIENT NAME]</span>
+          <div class="footer__main">
+            <div class="footer__identity">
+              <a href="index.html" class="nav__logo" aria-label="Archesian Construction Ltd home">
+                <img class="nav__logo-image" src="assets/logos/Archesian Construction Ltd Logo.jpg" alt="Archesian Construction Ltd" width="92" height="92">
+                <span class="nav__logo-text">Archesian</span>
               </a>
-              <p class="footer__tagline">Construction with editorial clarity and site discipline.</p>
-              <p class="footer__description">Residential, commercial, renovation, interiors, project management, and green building services for clients who value permanence.</p>
+              <p class="footer__statement">Integrated design, cost, and construction delivery from one Kampala practice.</p>
+              <a href="contact.html" class="btn btn--primary footer__cta">Start a Project</a>
             </div>
-            <div class="footer__newsletter">
-              <h2 class="footer__newsletter-title">Project Notes</h2>
-              <form class="footer__newsletter-form" data-newsletter-form>
-                <label class="sr-only" for="footer-email">Email address</label>
-                <input id="footer-email" class="footer__newsletter-input" type="email" name="email" placeholder="Email address">
-                <button class="btn btn--primary btn--sm" type="submit">Subscribe</button>
-              </form>
-            </div>
-          </div>
-          <div class="footer__columns">
-            <div class="footer__column">
-              <h3 class="footer__column-title">Company</h3>
-              <div class="footer__column-links">
-                <a href="about.html" class="footer__column-link">About</a>
-                <a href="team.html" class="footer__column-link">Team</a>
-                <a href="credentials.html" class="footer__column-link">Credentials</a>
-                <a href="careers.html" class="footer__column-link">Careers</a>
+            <div class="footer__directory">
+              <div class="footer__column">
+                <h3 class="footer__column-title">Studio</h3>
+                <div class="footer__column-links">
+                  <a href="about.html" class="footer__column-link">About</a>
+                  <a href="projects.html" class="footer__column-link">Projects</a>
+                  <a href="process.html" class="footer__column-link">Process</a>
+                </div>
+              </div>
+              <div class="footer__column">
+                <h3 class="footer__column-title">Services</h3>
+                <div class="footer__column-links">
+                  <a href="service-architecture.html" class="footer__column-link">Architecture</a>
+                  <a href="service-engineering.html" class="footer__column-link">Engineering</a>
+                  <a href="service-quantity-surveying.html" class="footer__column-link">Quantity Surveying</a>
+                  <a href="service-design-and-build.html" class="footer__column-link">Design and Build</a>
+                  <a href="service-renovations.html" class="footer__column-link">Renovations</a>
+                </div>
+              </div>
+              <div class="footer__column">
+                <h3 class="footer__column-title">Contact</h3>
+                <div class="footer__column-links">
+                  <a href="tel:+256706746868" class="footer__column-link">+256 706 746 868</a>
+                  <a href="tel:+256785170747" class="footer__column-link">+256 785 170 747</a>
+                  <a href="contact.html" class="footer__column-link">Ndundu Complex, Kisaasi</a>
+                </div>
               </div>
             </div>
-            <div class="footer__column">
-              <h3 class="footer__column-title">Work</h3>
-              <div class="footer__column-links">
-                <a href="projects.html" class="footer__column-link">Projects</a>
-                <a href="services.html" class="footer__column-link">Services</a>
-                <a href="process.html" class="footer__column-link">Process</a>
-                <a href="quote.html" class="footer__column-link">Get a Quote</a>
-              </div>
-            </div>
-            <div class="footer__column">
-              <h3 class="footer__column-title">Resources</h3>
-              <div class="footer__column-links">
-                <a href="insights.html" class="footer__column-link">Insights</a>
-                <a href="faq.html" class="footer__column-link">FAQ</a>
-                <a href="book-consultation.html" class="footer__column-link">Book Consultation</a>
-                <a href="tender.html" class="footer__column-link">Tender Submission</a>
-              </div>
-            </div>
-            <div class="footer__column">
-              <h3 class="footer__column-title">Contact</h3>
-              <div class="footer__column-links">
-                <a href="mailto:hello@example.com" class="footer__column-link">hello@example.com</a>
-                <a href="tel:+256000000000" class="footer__column-link">+256 000 000 000</a>
-                <a href="contact.html" class="footer__column-link">Kampala, Uganda</a>
-                <a href="contact.html" class="footer__column-link">Contact Page</a>
-              </div>
+            <div class="footer__social" aria-label="Social links">
+              <a href="https://x.com/Archesian" class="footer__social-icon" aria-label="Archesian on X"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m5 5 14 14M19 5 5 19" stroke="currentColor" stroke-width="2"/></svg></a>
+              <a href="#" class="footer__social-icon" aria-label="Archesian on LinkedIn"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 9v10M6 5.5v.01M10 19v-6a4 4 0 0 1 8 0v6M10 9v10" stroke="currentColor" stroke-width="2"/></svg></a>
+              <a href="#" class="footer__social-icon" aria-label="Archesian on Instagram"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="4" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="3.5" stroke="currentColor" stroke-width="2"/><path d="M17 7h.01" stroke="currentColor" stroke-width="2"/></svg></a>
+              <a href="mailto:info@archesian.com" class="footer__social-icon" aria-label="Email Archesian"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 6h16v12H4zM4 7l8 6 8-6" stroke="currentColor" stroke-width="2"/></svg></a>
             </div>
           </div>
           <div class="footer__bottom">
-            <div>
-              <div class="footer__legal">
-                <span class="footer__copyright">&copy; 2026 [CLIENT NAME]. All rights reserved.</span>
-                <span class="footer__legal-separator">|</span>
-                <a href="privacy.html" class="footer__legal-link">Privacy</a>
-                <a href="terms.html" class="footer__legal-link">Terms</a>
-                <a href="cookies.html" class="footer__legal-link">Cookies</a>
-              </div>
-              <p class="footer__credit">Built for refined construction companies.</p>
+            <div class="footer__legal">
+              <span class="footer__copyright">&copy; 2026 Archesian Construction Ltd.</span>
+              <a href="privacy.html" class="footer__legal-link">Privacy</a>
+              <a href="terms.html" class="footer__legal-link">Terms</a>
+              <a href="cookies.html" class="footer__legal-link">Cookies</a>
             </div>
-            <div class="footer__social">
-              <a href="#" class="footer__social-icon" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="4" y="4" width="16" height="16" rx="4" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="3.5" stroke="currentColor" stroke-width="2"/><path d="M17 7h.01" stroke="currentColor" stroke-width="2"/></svg></a>
-              <a href="#" class="footer__social-icon" aria-label="LinkedIn"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 9v10M6 5.5v.01M10 19v-6a4 4 0 0 1 8 0v6M10 9v10" stroke="currentColor" stroke-width="2"/></svg></a>
-              <a href="#" class="footer__social-icon" aria-label="X"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m5 5 14 14M19 5 5 19" stroke="currentColor" stroke-width="2"/></svg></a>
-            </div>
+            <p class="footer__credit">Prepared by Persmon Technologies</p>
           </div>
         </div>
       </footer>
