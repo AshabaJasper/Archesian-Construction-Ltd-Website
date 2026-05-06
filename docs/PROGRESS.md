@@ -99,6 +99,8 @@
 | Page | Status | Notes |
 |---|---|---|
 | `about.html` | ✅ Pass 1 complete | Reworked story, operating philosophy, proof, standards, CTA, and mobile-specific layout in `css/pages/about.css`. |
+| `index.html` | ✅ Pass 2 (2026-05-06) | Hero rebuilt — single balanced display headline with italic blueprint accent (`under one roof`), mono eyebrow with `N° 01` index + rule, calmer lead, and a 3-cell `dl` meta strip below the CTAs. All sections now share a numbered `section-eyebrow` pattern (`N° 02 — The Practice`, etc.) so the homepage reads as a single editorial document. New `link-arrow` element replaces stray prose links. Featured-projects header is split (title left, "All projects →" right). Contact list rebuilt as a labelled `Office / Direct / Studio` table with hover indent. |
+| Footer (shared shell) | ✅ Pass 2 (2026-05-06) | Replaced placeholder X glyph (was a close-cross), LinkedIn, Instagram with brand-correct path SVGs and added Facebook + Email. Restructured into four blocks: signature statement (`N° 07 — Colophon`), newsletter strip with inline form, identity (logo + address + socials), and 3-column directory (Studio / Services / Contact) — all link columns now have hover indent + leading rule. |
 
 ## Verification Additions
 
@@ -124,4 +126,4 @@
 
 ---
 
-*Last updated: 2026-05-04*
+*Last updated: 2026-05-06*
